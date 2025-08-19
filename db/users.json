@@ -4,14 +4,14 @@
     "name": "Alice Johnson",
     "age": 28,
     "email": "alice.johnson@example.com",
-    "password": "password123"
+    "password": "Password!123"
   },
   {
     "id": 2,
     "name": "Bob Smith",
     "age": 34,
     "email": "bob.smith@example.com",
-    "password": "qwerty456"
+    "password": "Qwerty.456"
   },
   {
     "id": 3,
@@ -23,14 +23,14 @@
   {
     "id": 4,
     "name": "Diana Green",
-    "age": "31",
+    "age": 31,
     "email": "diana.green@example.com",
     "password": "greenpass"
   },
   {
     "id": 5,
     "name": "Evan Lee",
-    "age": "27",
+    "age": 27,
     "email": "evan.lee@example.com",
     "password": "evanlee123"
   }
