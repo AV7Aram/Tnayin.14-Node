@@ -33,5 +33,12 @@
     "age": 27,
     "email": "evan.lee@example.com",
     "password": "evanlee123"
+  },
+  {
+    "id": 6,
+    "name": "Aram Vardanyan",
+    "age": 34,
+    "email": "aram.vardanyan@example.com",
+    "password": "AvaRam21_"
   }
 ]

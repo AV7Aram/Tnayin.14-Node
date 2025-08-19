@@ -1,5 +1,5 @@
 const express = require('express');
-const { home, users, error, login } = require('./routes');
+const { home, users, error, login, auth } = require('./routes');
 const app = express();
 
 app.use(express.json());
@@ -10,6 +10,7 @@ require('dotenv').config()
 
 app.use('/', home);
 app.use('/api', users);
+app.use('/auth', auth);
 app.use('/login', login)
 app.use(error)
 
