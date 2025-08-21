@@ -49,6 +49,14 @@ const userSchema = Joi.object({
             'number.min': 'Age must be at least 18',
             'number.max': 'Age must be at most 65',
             'any.required': 'Age is required'
+        }),
+
+    role: Joi.string()
+        .valid('admin', 'user')
+        .required()
+        .messages({
+            'any.only': 'Role must be either admin or user',
+            'string.empty': 'Role is required'
         })
 });
 

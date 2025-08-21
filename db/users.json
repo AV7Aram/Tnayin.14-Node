@@ -4,41 +4,23 @@
     "name": "Alice Johnson",
     "age": 28,
     "email": "alice.johnson@example.com",
-    "password": "Password!123"
+    "password": "Password!123",
+    "role": "admin"
   },
   {
     "id": 2,
     "name": "Bob Smith",
     "age": 34,
     "email": "bob.smith@example.com",
-    "password": "Qwerty.456"
+    "password": "Qwerty.456",
+    "role": "user"
   },
   {
     "id": 3,
-    "name": "Charlie Brown",
-    "age": 22,
-    "email": "charlie.brown@example.com",
-    "password": "charlie789"
-  },
-  {
-    "id": 4,
-    "name": "Diana Green",
-    "age": 31,
-    "email": "diana.green@example.com",
-    "password": "greenpass"
-  },
-  {
-    "id": 5,
-    "name": "Evan Lee",
-    "age": 27,
-    "email": "evan.lee@example.com",
-    "password": "evanlee123"
-  },
-  {
-    "id": 6,
-    "name": "Aram Vardanyan",
-    "age": 34,
-    "email": "aram.vardanyan@example.com",
-    "password": "AvaRam21_"
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "Password!123",
+    "age": 30,
+    "role": "admin"
   }
 ]

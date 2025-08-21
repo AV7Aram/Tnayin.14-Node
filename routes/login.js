@@ -2,6 +2,7 @@ const express = require('express');
 const { readFile } = require('../helpers/readFile');
 const { sendResponse } = require('../helpers/sendResponse');
 const { validateLogin } = require('../middleware/validateLogin');
+const { sessionManager } = require('../helpers/sessionManager');
 
 const login = express.Router();
 
@@ -17,11 +18,12 @@ login.post('/', validateLogin, async (req, res) => {
             return sendResponse(res, 401, { message: 'Invalid email or password' });
         }
 
-        req.session.user = {
+        const sessionId = sessionManager.createSession(user.id, {
             id: user.id,
             name: user.name,
-            email: user.email
-        };
+            email: user.email,
+            role: user.role 
+        });
 
         sendResponse(res, 200, {
             message: 'Login successful',
@@ -29,7 +31,8 @@ login.post('/', validateLogin, async (req, res) => {
                 id: user.id,
                 name: user.name,
                 email: user.email
-            }
+            },
+            sessionId
         });
 
     } catch (error) {
@@ -37,4 +40,4 @@ login.post('/', validateLogin, async (req, res) => {
     }
 });
 
-module.exports = { login };
+module.exports = { login }; 

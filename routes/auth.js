@@ -3,6 +3,7 @@ const { readFile } = require('../helpers/readFile');
 const { writeFile } = require('../helpers/writeFile');
 const { sendResponse } = require('../helpers/sendResponse');
 const { validateRegistration } = require('../middleware/validateRegistration');
+const { sessionManager } = require('../helpers/sessionManager');
 
 const auth = express.Router();
 
@@ -36,12 +37,11 @@ auth.post('/register', validateRegistration, async (req, res) => {
 });
 
 auth.post('/logout', (req, res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            return sendResponse(res, 500, { message: 'Error logging out' });
-        }
-        sendResponse(res, 200, { message: 'Logged out successfully' });
-    });
+    const sessionId = req.headers['authorization'];
+    if (sessionId) {
+        sessionManager.deleteSession(sessionId);
+    }
+    sendResponse(res, 200, { message: 'Logged out successfully' });
 });
 
 
